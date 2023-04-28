@@ -1,0 +1,40 @@
+﻿@using WebApplication13.Models;
+
+@{ Layout = null; }
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+</head>
+
+<body>
+
+    <div>
+
+        <ul>
+
+            @foreach (Employee employee in @Model)
+
+            {
+
+                <li>
+                    @employee.empID
+
+                    @employee.Age;
+
+                    @employee.Age
+
+                    @employee.Gender
+                </li>
+
+            }
+
+        </ul>
+
+    </div>
+
+</body>
+</html>
