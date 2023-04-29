@@ -1,5 +1,4 @@
 ﻿@using WebApplication13.Models
-
 @{ Layout = null; }
 
 <html>
@@ -15,20 +14,16 @@
     <div>
 
         <ul>
-
             @foreach (Employee employee in @Model) 
 
-            {
-
+            { 
             <li>
-                @employee.id
+            @employee.id
+            @employee.name
+            @employee.gender
 
-                @employee.name;
-           
-
-                @employee.City
-
-                @employee.gender
+			@employee.city
+			@employee.DepartmentId  
             </li>
 
             }

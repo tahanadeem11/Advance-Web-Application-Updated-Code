@@ -9,6 +9,7 @@ namespace WebApplication13.Models
 
     {
 
+        public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
 
     }

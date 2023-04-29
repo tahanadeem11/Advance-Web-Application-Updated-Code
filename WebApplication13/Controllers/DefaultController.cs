@@ -9,16 +9,23 @@ namespace WebApplication13.Controllers
 {
     public class DefaultController : Controller
     {
-        public ActionResult Index()
 
+        public ActionResult Index(int departmentId)
         {
-
             EmpContext employeeContext = new EmpContext();
-
-            List<Employee> employees = employeeContext.Employees.ToList();
-
+            List<Employee> employees = employeeContext.Employees.Where(emp => emp.DepartmentId == departmentId).ToList();
             return View(employees);
-
         }
+
+
+
+        public ActionResult Detail(int id)
+        {
+            EmpContext employeeContext = new EmpContext();
+            Employee employee = employeeContext.Employees.Single(emp => emp.id == id);
+
+            return View(employee);
+        }
+
     }
 }

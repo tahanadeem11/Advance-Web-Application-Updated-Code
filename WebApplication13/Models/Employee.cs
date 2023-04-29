@@ -7,23 +7,23 @@ using System.Web;
 
 namespace WebApplication13.Models
 {
-    [Table("Table1")]
+    [Table("EmployeeTable")]
 
     public class Employee
 
     {
 
-        [Key]
-
         public int id { get; set; }
+        
 
         public string name { get; set; }
 
-        public char gender { get; set; }
+        public string gender { get; set; }
 
-        public string City { get; set; }
+        public string city { get; set; }
+        public int DepartmentId { get; set; }
 
- 
+
 
     }
 }
