@@ -130,28 +130,12 @@
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\context.cs" />
     <Compile Include="Models\Department.cs" />
-    <Compile Include="Models\emp1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>emp1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\emp1.xsc">
-      <DependentUpon>emp1.xsd</DependentUpon>
-    </Content>
-    <None Include="Models\emp1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>emp1.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="Models\emp1.xss">
-      <DependentUpon>emp1.xsd</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
