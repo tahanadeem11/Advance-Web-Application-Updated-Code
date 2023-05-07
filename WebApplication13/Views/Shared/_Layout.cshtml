@@ -8,8 +8,271 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <meta name="viewport" content="width=device-width" />
+
     <title>@ViewBag.Title</title>
     <style>
+
+
+        #footer {
+            background: #000000;
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+            #footer .container {
+                width: 650px;
+                height: 100px            }
+
+        .footer_top h2 {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+            .footer_top h2 a {
+                font-size: 56px;
+                color: #FFFFFF;
+                font-family: 'Pacifico', cursive;
+            }
+
+        .footer_middle_left_inner h2 {
+            font-size: 28px;
+            color: #FFFFFF;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .footer_middle_left_inner p {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+        }
+
+            .footer_middle_left_inner p a {
+                color: #666;
+            }
+
+                .footer_middle_left_inner p a:hover {
+                    color: #FFFFC4;
+                }
+
+        .footer_middle_left_inner .hr_1 {
+            width: 65px;
+            border-width: 2px;
+            border-color: #ccc;
+        }
+
+        ul.social-network {
+            list-style: none;
+            display: inline;
+            margin-left: 0 !important;
+            padding: 0;
+        }
+
+            ul.social-network li {
+                display: inline;
+                margin: 0 5px;
+            }
+
+
+        /* footer social icons */
+        .social-network a.icoRss:hover {
+            background-color: #F56505;
+        }
+
+        .social-network a.icoFacebook:hover {
+            background-color: #3B5998;
+        }
+
+        .social-network a.icoTwitter:hover {
+            background-color: #33ccff;
+        }
+
+        .social-network a.icoGoogle:hover {
+            background-color: #BD3518;
+        }
+
+        .social-network a.icoVimeo:hover {
+            background-color: #0590B8;
+        }
+
+        .social-network a.icoLinkedin:hover {
+            background-color: #007bb7;
+        }
+
+            .social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+            .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+                color: #fff;
+            }
+
+        a.socialIcon:hover, .socialHoverClass {
+            color: #44BCDD;
+        }
+
+        .social-circle li a {
+            display: inline-block;
+            position: relative;
+            margin: 0 auto 0 auto;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            background: #FF0000;
+        }
+
+        .social-circle li i {
+            margin: 0;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .social-circle li a:hover i, .triggeredHover {
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -ms--transform: rotate(360deg);
+            transform: rotate(360deg);
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+
+        .social-circle i {
+            color: #fff;
+            -webkit-transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            -o-transition: all 0.8s;
+            -ms-transition: all 0.8s;
+            transition: all 0.8s;
+        }
+
+        .footer_bottom ul a {
+            background-color: #FF0000 !important;
+        }
+
+        .footer_bottom {
+            text-align: center;
+            padding-top: 40px;
+        }
+
+            .footer_bottom p {
+                font-size: 18px;
+                color: #FFFFFF;
+                padding-top: 30px;
+            }
+
+
+
+
+        .form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background-color: #f2f2f2;
+        }
+
+            .form h2 {
+                margin-bottom: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                color: #333;
+            }
+
+
+
+        /* Table styles */
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            .table th,
+            .table td {
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+            }
+
+            .table th {
+                background-color: #f7f7f7;
+                text-align: left;
+                font-weight: bold;
+            }
+            .table td {
+                padding: 1rem;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .table th {
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                background-color: #333;
+                color: #fff;
+            }
+
+            /* Colorful rows */
+            .table tbody tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .table tbody tr:nth-child(odd) {
+                background-color: #87cefa;
+                color: #fff;
+            }
+
+            /* Hover effect */
+            .table tbody tr:hover {
+                background-color: #ddd;
+                cursor: pointer;
+                color: #333;
+            }
+
+            /* Active row */
+            .table tbody tr.active {
+                background-color: #333;
+                color: #fff;
+            }
+
+        /* Table pagination */
+        .table-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+            .table-pagination .page-link {
+                padding: 0.5rem;
+                border: none;
+                margin: 0 0.25rem;
+                text-decoration: none;
+                color: #555;
+                background-color: transparent;
+                transition: all 0.2s ease-in-out;
+            }
+        body {
+            font-family: 'Josefin Sans', sans-serif !important;
+        }
+                .table-pagination .page-link:hover {
+                    color: #333;
+                }
+
+                .table-pagination .page-link.active {
+                    color: #fff;
+                    background-color: #333;
+                }
+
+                .table-pagination .page-link.disabled {
+                    opacity: 0.5;
+                    pointer-events: none;
+                }
+
+
         .navbar-default {
             border: none;
             color: #000;
@@ -104,14 +367,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand heading_tag" href="index.php">Bratva</a>
+                    <a class="navbar-brand heading_tag">Not Admin</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a class="tag_menu active_tab" href="index.php">HOME</a>
+
+                            <a class="tag_menu active_tab" @Html.ActionLink("HOME", "Index", "Employees")</a>
                         </li>
 
                         <li>
@@ -125,10 +389,11 @@
                             <a class="tag_menu" href="team.html">CONTACT</a>
                         </li>
 
-                                        
-                   
+
+
                         <li>
-                            <a class="tag_menuLoca" href="LoginForm.php">SIGN UP</a>
+                            <a class="tag_menu active_tab" @Html.ActionLink("SIGN UP", "Create", "Employees")</a>
+
                         </li>
 
                         <!-- <li>
@@ -144,11 +409,72 @@
         </nav>
     </section>
     <div class="container body-content">
-       
+
 
         @RenderBody()
     </div>
 
+    <div>
+        .
+        <P>
+
+        </P>
+        .
+        .
+        .
+        .
+    </div>
+
+    <div>
+        .
+        <P>
+
+        </P>
+        .
+        .
+        .
+        .
+    </div>
+
+    <section id="footer" class="clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="footer clearfix">
+                    <div class="footer_middle clearfix">
+                        <div class="col-sm-4 footer_middle_left clearfix">
+                            <div class="footer_middle_left_inner clearfix">
+                                <h2>Address</h2>
+                                <p>Mall Road, Lahore</p>
+                                <p>Pakistan</p>
+                                <hr class="hr_1">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 footer_middle_left_inner clearfix">
+                            <div class="footer_middle_left_inner clearfix">
+                                <h2>Telephone</h2>
+                                <p><a href="#">Phone</a></p>
+                                <p><a href="#">03245732932</a></p>
+                                <hr class="hr_1">
+                            </div>
+                        </div>
+                        <div class="col-sm-4 footer_middle_left clearfix">
+                            <div class="footer_middle_left_inner clearfix">
+                                <h2>E-mail</h2>
+                                <p><a href="#">My E-mail</a></p>
+                                <p><a href="#">tahanadeem.gk@gmail.com</a></p>
+                                <hr class="hr_1">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        s
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

@@ -6,44 +6,25 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Employee</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+<table class="table">
+    <tr>
+        <td><strong>Name:</strong></td>
+        <td>@Html.DisplayFor(model => model.name)</td>
+    </tr>
+    <tr>
+        <td><strong>Gender:</strong></td>
+        <td>@Html.DisplayFor(model => model.gender)</td>
+    </tr>
+    <tr>
+        <td><strong>City:</strong></td>
+        <td>@Html.DisplayFor(model => model.city)</td>
+    </tr>
+    <tr>
+        <td><strong>Department:</strong></td>
+        <td>@Html.DisplayFor(model => model.DepartmentId)</td>
+    </tr>
+</table>
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.gender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.city)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.city)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DepartmentId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DepartmentId)
-        </dd>
-
-    </dl>
-</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
     @Html.ActionLink("Back to List", "Index")
