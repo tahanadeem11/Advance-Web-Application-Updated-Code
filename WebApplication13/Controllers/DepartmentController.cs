@@ -16,5 +16,6 @@ namespace WebApplication13.Controllers
             List<Department> departments = employeeContext.Departments.ToList();
             return View(departments);
         }
+
     }
 }

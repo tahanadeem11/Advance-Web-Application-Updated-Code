@@ -1,40 +1,156 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .navbar-default {
+            border: none;
+            color: #000;
+            padding-top: 15px;
+        }
+
+        .navbar {
+            background-color: #000;
+        }
+
+        .navbar-brand {
+            color: #fff !important;
+            font-size: 46px;
+        }
+
+        #header .tag_menu {
+            color: #fff;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 8px;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+            #header .tag_menu:hover {
+                color: #b5a5bf;
+                border-bottom: 2px solid #fac122;
+            }
+
+
+        #header .tag_menuLoca {
+            color: #fff;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 8px;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+            #header .tag_menuLoca:hover {
+                color: #fac122;
+                border-bottom: 2px solid #fac122;
+            }
+
+        .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+            background: none;
+            color: #fac122 !important;
+            border-bottom: 2px solid #fac122;
+        }
+
+        .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+            background: none;
+        }
+
+        .drop_1 {
+            min-width: 200px;
+            text-align: center;
+            padding: 0;
+        }
+
+            .drop_1 a:hover {
+                background: none !important;
+                color: #dd3744 !important;
+            }
+
+        .header_menu .navbar {
+            background: #333 !important;
+            padding-bottom: 45px;
+        }
+
+        .drop_1 li a {
+            background: #FFCC00;
+            color: #000;
+            font-size: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        #header_mini {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
+    <section id="header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand heading_tag" href="index.php">Bratva</a>
+                </div>
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="tag_menu active_tab" href="index.php">HOME</a>
+                        </li>
+
+                        <li>
+                            <a class="tag_menu" href="About.php">ABOUT</a>
+                        </li>
+
+                        <li>
+                            <a class="tag_menu" href="Blog.php">TESTIMONIAL</a>
+                        </li>
+                        <li>
+                            <a class="tag_menu" href="team.html">CONTACT</a>
+                        </li>
+
+                                        
+                   
+                        <li>
+                            <a class="tag_menuLoca" href="LoginForm.php">SIGN UP</a>
+                        </li>
+
+                        <!-- <li>
+                        <button  class="button button3" type="button" onclick="javascript:window.location='./Login/user.php';">SIGN UP</button>
+                        </li> -->
+
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </section>
     <div class="container body-content">
+       
+
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
+
