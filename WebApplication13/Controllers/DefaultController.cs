@@ -26,6 +26,20 @@ namespace WebApplication13.Controllers
 
             return View(employee);
         }
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Testimonials()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
 
     }
 }

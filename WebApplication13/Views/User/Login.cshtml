@@ -1,0 +1,41 @@
+﻿@model WebApplication13.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+}
+
+<script>
+    $(function () {
+        var url = '@Url.Action("Index", "Default")'; // set the URL to the Employees action
+        var message = 'Login successful!'; // set the message for the alert dialog
+
+        // check if the login was successful (if there are any validation errors, the form will not submit)
+        $('form').submit(function () {
+            // show the alert dialog
+            alert(message);
+            // redirect to the Employees page
+            window.location.href = url;
+            return false; // prevent the form from submitting again
+        });
+    });
+</script>

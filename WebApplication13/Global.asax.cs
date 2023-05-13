@@ -14,10 +14,11 @@ namespace WebApplication13
         protected void Application_Start()
 
         {
-            Database.SetInitializer<WebApplication13.Models.EmpContext>(null);
+            
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            
+            Database.SetInitializer<WebApplication13.Models.EmpContext>(null);
+
         }
     }
 }
