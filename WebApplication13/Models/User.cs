@@ -9,11 +9,13 @@ namespace WebApplication13.Models
     [Table("UserTable")]
     public class User
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public int DepartmentId { get; set; }
+        public int Userid { get; set; }
         public Department Department { get; set; }
     }
 }

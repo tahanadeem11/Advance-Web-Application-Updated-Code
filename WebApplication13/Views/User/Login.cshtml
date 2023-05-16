@@ -3,11 +3,13 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Register</h2>
+<h2>Login</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
@@ -21,21 +23,11 @@
         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
     </div>
 
-    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
 }
 
-<script>
-    $(function () {
-        var url = '@Url.Action("Index", "Default")'; // set the URL to the Employees action
-        var message = 'Login successful!'; // set the message for the alert dialog
-
-        // check if the login was successful (if there are any validation errors, the form will not submit)
-        $('form').submit(function () {
-            // show the alert dialog
-            alert(message);
-            // redirect to the Employees page
-            window.location.href = url;
-            return false; // prevent the form from submitting again
-        });
-    });
-</script>
+<div class="alert alert-danger" role="alert" style="display:@(ViewData.ModelState.IsValid ? "none" : "block")">
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+</div>

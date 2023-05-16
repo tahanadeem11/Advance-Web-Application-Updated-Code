@@ -10,7 +10,7 @@ namespace WebApplication13.Controllers
     public class DefaultController : Controller
     {
 
-        public ActionResult Index(int departmentId)
+        public ActionResult Index(int departmentId =0)
         {
             EmpContext employeeContext = new EmpContext();
             List<Employee> employees = employeeContext.Employees.Where(emp => emp.DepartmentId == departmentId).ToList();

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,24 +25,25 @@ namespace WebApplication13.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
-            // check if the provided email and password match a user in the database
-            var dbUser = db.Users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password);
-            if (dbUser == null)
+            // check if the user is in the database
+            var userInDb = db.Users.SingleOrDefault(u => u.Email == user.Email && u.Password == user.Password);
+
+            if (userInDb != null)
             {
-                // if no matching user was found, display an error message and return the login view
-                ViewBag.ErrorMessage = "Invalid email or password.";
-                return View("Login");
+                // set the user's ID in the session
+                Session["UserId"] = userInDb.Id;
+
+                // redirect to the Employees page
+                return RedirectToAction("Index", "Employees");
             }
             else
             {
-                // if the user was found, store their ID in a session variable
-                Session["UserId"] = dbUser.Id;
-
-                // display a success message and redirect to the Employees page
-                TempData["SuccessMessage"] = "Login successful!";
-                return RedirectToAction("Index", "Employees");
+                // display an error message
+                ModelState.AddModelError("", "Invalid email or password.");
+                return View(user);
             }
         }
+
 
 
         [HttpGet]
@@ -55,14 +59,26 @@ namespace WebApplication13.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Login", "User");
+                try
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    return RedirectToAction("Login", "User");
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var error in ex.EntityValidationErrors.SelectMany(x => x.ValidationErrors))
+                    {
+                        // Log the error using a logging framework like Serilog
+                        // You can also display the error message using ViewBag and display it in the view
+                    }
+                }
             }
 
             ViewBag.DepartmentList = new SelectList(db.Departments.ToList(), "Id", "Name");
             return View(user);
         }
+
     }
 
 }
