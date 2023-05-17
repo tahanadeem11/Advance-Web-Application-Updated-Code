@@ -123,5 +123,20 @@ namespace WebApplication13.Controllers
             }
             base.Dispose(disposing);
         }
+        // GET: Employees/Search
+        public ActionResult Search(string searchTerm)
+        {
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return View(new List<Employee>());
+            }
+
+            var employees = db.Employees
+                .Where(e => e.name.Contains(searchTerm) || e.city.Contains(searchTerm))
+                .ToList();
+
+            return View(employees);
+        }
+
     }
 }
